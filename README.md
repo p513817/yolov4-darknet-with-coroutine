@@ -61,8 +61,3 @@ python3 main.py
 ## Reference
 * [tensorrt_demos](https://github.com/jkjung-avt/tensorrt_demos/tree/master)
 * [jetson install onnx](https://forums.developer.nvidia.com/t/problem-with-installing-onnx-on-jetson-nano/110820/12)
-* 
-
-
-git config --global user.email "p513817@gmail.com" \
-git config --global user.name "p513817"
