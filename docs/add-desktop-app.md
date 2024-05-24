@@ -1,14 +1,14 @@
 
 ```bash
 ROOT="~/.local/share/applications"
-sudo vim ~/.local/share/applications/cam.desktop
-sudo chmod +wr ~/.local/share/applications/cam.desktop
+vim ~/.local/share/applications/cam.desktop
+# chmod +wr ~/.local/share/applications/cam.desktop
 ```
 
 ```bash
 [Desktop Entry]
 Version=0.1
-Exec=python3 /home/nvidia/workspace/jetson-orin-multicam/fix_main.py
+Exec=sudo -i /home/nvidia/workspace/jetson-orin-multicam/run.sh
 Name=iCam
 GenericName=iCam
 Comment=Launch iCam
@@ -21,4 +21,9 @@ Categories=Application;
 ln -s \
 ~/.local/share/applications/cam.desktop \
 ~/Desktop/cam.desktop
+```
+
+```bash
+rm $ROOT/cam.desktop
+rm ~/Desktop/cam.desktop
 ```

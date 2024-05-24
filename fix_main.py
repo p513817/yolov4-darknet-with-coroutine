@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 import asyncio
 import copy
 import time
@@ -76,7 +77,7 @@ async def async_main(loop: asyncio.AbstractEventLoop, exec: ThreadPoolExecutor):
                 loop.run_in_executor(exec, block_infer, cams[0], inferences[0], vis),
                 loop.run_in_executor(exec, block_infer, cams[1], inferences[1], vis),
             )
-            concat_frame = show_fps(cv2.vconcat(draws), fps)
+            concat_frame = show_fps(cv2.hconcat(draws), fps)
 
             if not displayer.show(concat_frame):
                 break
