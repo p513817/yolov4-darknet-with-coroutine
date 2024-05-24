@@ -19,7 +19,9 @@ def init_cuda():
     from pycuda import autoinit  # type: ignore  # noqa: I001, F401
 
 
-def load_yolo_plugin(path: str = "./plugins/libyolo_layer.so"):
+def load_yolo_plugin(file_name: str = "libyolo_layer.so"):
+    yolo_py_path = Path(__file__).absolute()
+    path = yolo_py_path.parents[1] / "plugins" / file_name
     try:
         ctypes.cdll.LoadLibrary(path)
     except OSError as e:
