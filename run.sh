@@ -1,5 +1,4 @@
 #!/bin/bash
-echo "run two async yolo"
 sudo -u nvidia python3 /home/nvidia/workspace/jetson-orin-multicam/fix_main.py &
 background_pid=$!
 sleep 2
