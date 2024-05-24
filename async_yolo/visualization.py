@@ -116,10 +116,13 @@ class Displayer:
         self.window_name = "Test"
         cv2.namedWindow(self.window_name, cv2.WINDOW_NORMAL)
         cv2.setWindowProperty(self.window_name, cv2.WND_PROP_FULLSCREEN, 1)
+        self.break_keys = [ord("q"), ord("Q"), 27]
 
     def key_trigger_event(self) -> bool:
         key = cv2.waitKey(1)
-        if key == 27:
+
+        # Esc
+        if key in self.break_keys:
             return False
         # F12
         elif key in [201, ord("t"), ord("T")]:
@@ -130,6 +133,11 @@ class Displayer:
                 else cv2.WINDOW_FULLSCREEN
             )
             cv2.setWindowProperty(self.window_name, cv2.WND_PROP_FULLSCREEN, new_state)
+
+        # Close Windows
+        if cv2.getWindowProperty(self.window_name, cv2.WND_PROP_VISIBLE) < 1:
+            return False
+
         return True
 
     def show(self, frame):
