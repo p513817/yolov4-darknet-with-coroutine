@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo -u nvidia python3 /home/nvidia/workspace/jetson-orin-multicam/fix_main.py &
+sudo -u nvidia python3 /home/nvidia/workspace/jetson-orin-multicam/demo.py &
 background_pid=$!
 sleep 2
 echo "set camera mode"
